@@ -3,6 +3,7 @@ package com.n1k0.RESTtest.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "todo")
 public class ToDoEntity {
 
     @Id
@@ -10,6 +11,7 @@ public class ToDoEntity {
     private Long id;
     private String title;
     private Boolean completed;
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -36,6 +38,14 @@ public class ToDoEntity {
 
     public Boolean getCompleted() {
         return completed;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setCompleted(Boolean completed) {

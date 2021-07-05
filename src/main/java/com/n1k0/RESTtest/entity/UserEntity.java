@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "user")
 public class UserEntity {
 
     @Id
@@ -41,5 +42,13 @@ public class UserEntity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<ToDoEntity> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(List<ToDoEntity> todos) {
+        this.todos = todos;
     }
 }
